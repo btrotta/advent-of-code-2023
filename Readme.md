@@ -16,8 +16,15 @@ and then replace its digits with `.` to avoid double-counting.
 For part b, for each `*` symbol, make a list of all the numbers adjacent to it,  and calculate gear ratio when there are 
 only 2. It is not necessary to replace numbers with `.` in this case.
 
-
 ## Day 4
 Part a is straightforward. For part b, maintain an array `num_copies` of the number of copies of each card (starting with all 
 values equal to 1). When processing line `i`, if `n` matches are found, increment the number of copies of the next `n` cards 
 by `num_copies[i]`
+
+## Day 5
+For part a, we can just iterate through all the maps for each seed. For part b, there are too many seeds for this 
+to be feasible. Since each mapping just shifts a range of numbers, we know that the list of possible seeds can 
+be divided into a relatively small number of ranges, and within each range the lower end of the range will 
+correspond to the lowest location number. To identify the ranges, work backwards through the mappings, and for 
+each transformation find its inverse image.
+
