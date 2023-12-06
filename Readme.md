@@ -13,7 +13,7 @@ Iterate over the lines. For part a, use a function to check each line so we can 
 ## Day 3
 For part a, iterate over the symbols, add each adjacent number to the total,
 and then replace its digits with `.` to avoid double-counting. 
-For part b, for each `*` symbol, make a list of all the numbers adjacent to it,  and calculate gear ratio when there are 
+For part b, for each `*` symbol, make a list of all the numbers adjacent to it, and calculate gear ratio when there are 
 only 2. It is not necessary to replace numbers with `.` in this case.
 
 ## Day 4
@@ -28,3 +28,7 @@ be divided into a relatively small number of ranges, and within each range the l
 correspond to the lowest location number. To identify the ranges, work backwards through the mappings, and for 
 each transformation find its inverse image.
 
+## Day 6
+For part a, check all the possible times. For part b, this is slow. A more efficient solution is to note that the 
+distance travelled is a quadratic function of the starting time, and use the quadratic formula to find the 
+ranges where distance travelled is greater than the record.
