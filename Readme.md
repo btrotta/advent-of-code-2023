@@ -30,5 +30,5 @@ each transformation find its inverse image.
 
 ## Day 6
 For part a, check all the possible times. For part b, this is slow. A more efficient solution is to note that the 
-distance travelled is a quadratic function of the starting time, and use the quadratic formula to find the 
+distance travelled is a quadratic function of the charging time, and use the quadratic formula to find the 
 ranges where distance travelled is greater than the record.
