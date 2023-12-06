@@ -1,7 +1,7 @@
 from utilities import *
 import math
 
-arr = parse_single_string(False)
+arr = parse_single_string()
 t = int(arr[0].split(":")[1].strip().replace(" ", ""))
 d = int(arr[1].split(":")[1].strip().replace(" ", ""))
 
