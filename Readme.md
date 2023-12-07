@@ -32,3 +32,11 @@ each transformation find its inverse image.
 For part a, check all the possible times. For part b, this is slow. A more efficient solution is to note that the 
 distance travelled is a quadratic function of the charging time, and use the quadratic formula to find the 
 range where distance travelled is greater than the record.
+
+## Day 7
+For both parts, we need functions to return the strength of a given hand, and the rank of a single card. Once 
+we have these, we just sort using these keys. To calculate the strength of a hand, use `collections.Counter` to 
+count the multiple occurences of cards. For part b, modify the counter to allocate multiples of "J" to the 
+next-most-common card.
+
+
