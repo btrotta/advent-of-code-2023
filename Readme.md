@@ -39,4 +39,11 @@ we have these, we just sort using these keys. To calculate the strength of a han
 count the multiple occurences of cards. For part b, modify the counter to allocate multiples of "J" to the 
 next-most-common card.
 
-
+## Day 8
+For part a, just follow the path. For part b, note that since there are only a finite number of vertices and the 
+list of directions is finite, all paths repeat after some time. For each starting node, follow the directions until 
+the path repeats, keeping track of the lengths of sub-paths that end in a valid end node. (The path will repeat when 
+the same state recurs, where state is defined by the current node and the position in the list of directions.) It turns
+out that, for each starting node, only one sub-path ends in a valid end node, and its distance from the 
+start is equal to the cycle length for that starting node (this is by design of the problem, it's not true in general). 
+Therefore it suffices to find the least common multiple of all the cycle lengths.
