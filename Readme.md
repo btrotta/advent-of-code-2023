@@ -47,3 +47,8 @@ the same state recurs, where state is defined by the current node and the positi
 out that, for each starting node, only one sub-path ends in a valid end node, and its distance from the 
 start is equal to the cycle length for that starting node (this is by design of the problem, it's not true in general). 
 Therefore it suffices to find the least common multiple of all the cycle lengths.
+
+## Day 9
+For part a, iterate over the array taking diffs until the result is all zeros. Keep track of the last element at each 
+step. Then, iterate backwards over the list of last elements. At each step, the value filled at the end of the previous 
+line gets added to the last element of the line above. Part b is similar, but subtract from the first element instead.
