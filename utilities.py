@@ -188,4 +188,12 @@ def show_image(arr):
     plt.imshow(arr, origin="upper")
 
 
+def valid_coords(r, c, num_rows, num_cols):
+    return (r >= 0) and (c >= 0) and (r < num_rows) and (c < num_cols)
+
+
 ALPHABET = list("abcdefghijklmnopqrstuvwxyz")
+
+DIRECTIONS = [-1, 1, complex(0, 1), complex(0, -1)]
+
+DIRECTIONS_DIAG = [-1, 1, complex(0, 1), complex(0, -1), complex(1, 1), complex(1, -1), complex(-1, 1), complex(-1, -1)]
