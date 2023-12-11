@@ -52,3 +52,17 @@ Therefore it suffices to find the least common multiple of all the cycle lengths
 For part a, iterate over the array taking diffs until the result is all zeros. Keep track of the last element at each 
 step. Then, iterate backwards over the list of last elements. At each step, the value filled at the end of the previous 
 line gets added to the last element of the line above. Part b is similar, but subtract from the first element instead.
+
+## Day 10
+For part a, enumerate the allowed directions given the current character of the array, and the allowed next characters 
+for any direction. Use this to find the valid path. For part b, first replace the ``S`` character by 
+its pipe shape character, which we can determine by checking its connecting pipes. Then, iterate over the rows and, for each row, 
+iterate over the columns and count the number of vertical loop boundaries (``|``) crossed: if it's an odd number, 
+we are inside the loop. A pair of ``F`` followed later by ``J``, or ``L`` followed later by ``7`` also counts as a
+vertical boundary. 
+
+## Day 11
+For part a, we can just build the expanded array. The distance between any two galaxies is the sum of the vertical 
+and horizontal distances. For part b, the array is too large to work with, so instead build a lookup table 
+that maps each row of the original array to its row index in the expanded array, and similarly for the columns. Use these 
+tables to convert the galaxy coordinates to their equivalents in the expanded array.
