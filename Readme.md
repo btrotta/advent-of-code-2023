@@ -66,3 +66,16 @@ For part a, we can just build the expanded array. The distance between any two g
 and horizontal distances. For part b, the array is too large to work with, so instead build a lookup table 
 that maps each row of the original array to its row index in the expanded array, and similarly for the columns. Use these 
 tables to convert the galaxy coordinates to their equivalents in the expanded array.
+
+## Day 12
+This is a dynamic programming problem. For the ith group, for each valid starting position for this group, 
+calculate the number of valid arrangements that have the ith group in this position. This is easy for the first group, 
+and for subsequent groups, we can use the results of the previous step. When calculating the range of possible starting 
+positions to check, use the problem conditions to constrain the range. There must be enough room at the end to fit 
+all the remaining groups; there must be a space of at least 1 after the end of the previous group; and the gaps between 
+groups (and before/after all the groups) must not contain broken machines.
+
+## Day 13
+Iterate over the possible reflection axes. For part a, check whether the left and right parts are exactly the 
+same; for part b, check whether the sum of differences equals 1.
+
