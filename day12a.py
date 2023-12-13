@@ -1,5 +1,4 @@
 from utilities import *
-import itertools
 
 
 arr = parse_multi_string()
