@@ -79,3 +79,9 @@ groups (and before/after all the groups) must not contain broken machines.
 Iterate over the possible reflection axes. For part a, check whether the left and right parts are exactly the 
 same; for part b, check whether the sum of differences equals 1.
 
+## Day 14
+For part a, iterate over the columns, and for each column, iterate over rows, keeping track of the northernmost empty
+space that a rock could roll to. For part b, write functions to do similar iterations for all the directions. Since 
+there are only finitely many rocks and spaces, the state of the rocks must repeat after some number of cycles. Therefore 
+we do not need to simulate all the cycles.
+
