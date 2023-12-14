@@ -92,4 +92,3 @@ ans = 0
 for r, c in curr_pos:
     ans += len(arr) - r
 print(ans)
-
