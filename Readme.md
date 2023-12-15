@@ -85,3 +85,6 @@ space that a rock could roll to. For part b, write functions to do similar itera
 there are only finitely many rocks and spaces, the state of the rocks must repeat after some number of cycles. Therefore 
 we do not need to simulate all the cycles.
 
+## Day 15
+Part a is straightforward. For part b, represent each box by a list containing pairs `(label focal_length)`.
+
