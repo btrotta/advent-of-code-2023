@@ -86,5 +86,12 @@ there are only finitely many rocks and spaces, the state of the rocks must repea
 we do not need to simulate all the cycles.
 
 ## Day 15
-Part a is straightforward. For part b, represent each box by a list containing pairs `(label focal_length)`.
+Part a is straightforward. For part b, represent each box by a list containing pairs `(label, focal_length)`.
+
+## Day 16
+Use a stack to store a list of the beams that need to be followed (described by current position and direction). Use a 
+set to keep track of energized points. Initialize the stack with the starting position and direction. 
+While the stack is non-empty, pop the top element and follow it until it changes direction or splits. Then, add the 
+new position(s) and direction(s) to the stack. Use a set to keep track of visited states (i.e. tuples `(position, direction)`), to 
+avoid getting stuck in an infinite loop.
 

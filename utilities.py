@@ -191,6 +191,10 @@ def show_image(arr):
 def valid_coords(r, c, num_rows, num_cols):
     return (r >= 0) and (c >= 0) and (r < num_rows) and (c < num_cols)
 
+def valid_coords_complex(x, num_rows, num_cols):
+    r, c = int(x.real), int(x.imag)
+    return (r >= 0) and (c >= 0) and (r < num_rows) and (c < num_cols)
+
 
 ALPHABET = list("abcdefghijklmnopqrstuvwxyz")
 
