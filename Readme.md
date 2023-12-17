@@ -95,7 +95,7 @@ While the stack is non-empty, pop the top element and follow it until it changes
 new position(s) and direction(s) to the stack. Use a set to keep track of visited states (i.e. tuples `(position, direction)`), to 
 avoid getting stuck in an infinite loop.
 
-## Day 15
+## Day 17
 This is a shortest path problem so we can use Dijkstra's algorithm. However, because of the constraints on distance 
 travelled in each step, and on changing direction, the graph is slightly more complicated. Define a node of the graph 
 to be a tuple `(position, direction)` where direction is the direction (vertical or horizontal, indicated by `"v"` or `"h"`) 
