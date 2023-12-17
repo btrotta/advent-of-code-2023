@@ -95,3 +95,10 @@ While the stack is non-empty, pop the top element and follow it until it changes
 new position(s) and direction(s) to the stack. Use a set to keep track of visited states (i.e. tuples `(position, direction)`), to 
 avoid getting stuck in an infinite loop.
 
+## Day 15
+This is a shortest path problem so we can use Dijkstra's algorithm. However, because of the constraints on distance 
+travelled in each step, and on changing direction, the graph is slightly more complicated. Define a node of the graph 
+to be a tuple `(position, direction)` where direction is the direction (vertical or horizontal, indicated by `"v"` or `"h"`) 
+that was travelled to arrive at that position. The edges of the graph connect points having different values for `direction`, and where 
+the difference in position is between 1 and 3 (part a) or between 4 and 10 (part b). The edge weight is given by the sum of 
+the array values between the current and new positions (excluding the current position).
