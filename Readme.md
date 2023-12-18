@@ -102,3 +102,13 @@ to be a tuple `(position, direction)` where direction is the direction (vertical
 that was travelled to arrive at that position. The edges of the graph connect points having different values for `direction`, and where 
 the difference in position is between 1 and 3 (part a) or between 4 and 10 (part b). The edge weight is given by the sum of 
 the array values between the current and new positions (excluding the current position).
+
+
+## Day 18
+For part a, calculate the coordinates, and then consider a rectangle that exceeds the coordinates by 1 in every direction.
+Starting with the upper-left corner of the rectangle, we can use depth-first search to find the points that are in the 
+rectangle but outside the lagoon. Subtract the number of such points from the area of the rectangle to get the area of 
+the lagoon. Part b is similar, except that the coordinates are too large to explicitly enumerate the border of the lagoon.
+However, since the coordinates of the corners are relatively few, we can use an approach similar to that in Day 11, 
+where we project them to smaller coordinates and use a lookup table to find the area of each volume in the original
+(large) coordinates.
