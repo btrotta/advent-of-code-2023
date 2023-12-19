@@ -57,17 +57,6 @@ for line in arr:
             else:
                 nodes[f"{step}_0"] = nodes.get(f"{step}_0", Node(f"{step}_0"))
 
-
-def parse_graph(ratings_dict):
-    node = nodes["in_0"]
-    while node.val is None:
-        if ratings_dict[node.test_attr] < node.threshold:
-            node = nodes[node.left]
-        else:
-            node = nodes[node.right]
-    return node.val
-
-
 # check that graph is directed
 pointers = Counter()
 for node in nodes.values():
