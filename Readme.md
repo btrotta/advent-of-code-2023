@@ -112,3 +112,10 @@ the lagoon. Part b is similar, except that the coordinates are too large to expl
 However, since the coordinates of the corners are relatively few, we can use an approach similar to that in Day 11, 
 where we project them to smaller coordinates and use a lookup table to find the area of each volume in the original
 (large) coordinates.
+
+## Day 19
+Represent the sequence of operations as a directed graph. There are no loops, so the graph is a tree. For part a, 
+traverse the tree for all the given ratings. For part b, use depth-first search to traverse the tree, and during the 
+traversal label each node with its maximum and minimum values for each category. When reaching an acceptance leaf node, 
+calculate the product of the category ranges and add to the total number of rating combinations.
+
