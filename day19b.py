@@ -90,20 +90,18 @@ while len(to_visit) > 0:
         visited.add(node.name)
         to_visit.pop()
     elif node.val is None:
-        if node.left not in visited:
-            left_child = nodes[node.left]
-            to_visit.append(left_child)
-            left_child.min_vals = deepcopy(node.min_vals)
-            left_child.max_vals = deepcopy(node.max_vals)
-            left_child.max_vals[node.test_attr] = min(left_child.max_vals[node.test_attr],
-                                                      node.threshold)
-        if node.right not in visited:
-            right_child = nodes[node.right]
-            to_visit.append(right_child)
-            right_child.min_vals = deepcopy(node.min_vals)
-            right_child.min_vals[node.test_attr] = max(right_child.min_vals[node.test_attr],
-                                                      node.threshold)
-            right_child.max_vals = deepcopy(node.max_vals)
+        left_child = nodes[node.left]
+        to_visit.append(left_child)
+        left_child.min_vals = deepcopy(node.min_vals)
+        left_child.max_vals = deepcopy(node.max_vals)
+        left_child.max_vals[node.test_attr] = min(left_child.max_vals[node.test_attr],
+                                                  node.threshold)
+        right_child = nodes[node.right]
+        to_visit.append(right_child)
+        right_child.min_vals = deepcopy(node.min_vals)
+        right_child.min_vals[node.test_attr] = max(right_child.min_vals[node.test_attr],
+                                                  node.threshold)
+        right_child.max_vals = deepcopy(node.max_vals)
     else:
         to_visit.pop()
         visited.add(node.name)
