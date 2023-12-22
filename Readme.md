@@ -123,10 +123,9 @@ calculate the product of the category ranges and add to the total number of rati
 For part a, simulate the button presses. For each press, use a queue to keep track of the sent pulses and process them 
 first-in first-out. For part b, this is hard to solve in general, because there are too many possible states of the 
 system (`2^n`, where `n` is the number of flip-flops). But by plotting the graph we can see that it consists of 4 
-parts that are disjoint apart from their inputs from the broadcaster and their outputs. These outputs are then each inverted 
-and combined in a conjunction module with outputs to the final `rx` node. Therefore, it suffices to find a number of 
-button presses for each subgraph's output to send a low signal. Each subgraph contains a relatively small number of nodes, 
-so it's possible enumerate all the possible states, and check when the cycle of states repeats. For each subgraph, 
-it turns out that the cycle repeats back to the initial state, and that a low pulse is sent during the last 
-button press of the cycle. Therefore the answer is the lowest common multiple of all the cycle lengths.
-
+parts that are disjoint apart from their inputs from the broadcaster and their outputs. The output of each subgraph is then inverted 
+and combined in a conjunction module with outputs to the final `rx` node. Therefore, it suffices to find the minimum number of 
+button presses such that all subgraphs output a low signal. Each subgraph contains a relatively small number of nodes, 
+so it's possible to enumerate all the possible states, and check when the cycle of states repeats. For each subgraph, 
+it turns out that the cycle repeats back to the very first state (i.e. before any button presses), and that a low pulse 
+is sent during the last button press of the cycle. Therefore the answer is the lowest common multiple of all the cycle lengths.
