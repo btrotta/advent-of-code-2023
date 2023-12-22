@@ -129,3 +129,11 @@ button presses such that all subgraphs output a low signal. Each subgraph contai
 so it's possible to enumerate all the possible states, and check when the cycle of states repeats. For each subgraph, 
 it turns out that the cycle repeats back to the very first state (i.e. before any button presses), and that a low pulse 
 is sent during the last button press of the cycle. Therefore the answer is the lowest common multiple of all the cycle lengths.
+
+## Day 21
+First order the bricks in increasing order of lowest edge. Then simulate the falling, using a set to keep track of 
+filled locations and a dictionary to map each filled location to its corresponding brick. Then, for each brick, use
+this dictionary to determine the set of bricks above and below it and record this information in dictionaries. For part 
+a, a brick will cause other bricks to fall if, for each brick above it, there is only one brick below. For part b, 
+for each brick use depth-first search to determine the number of bricks above it that will fall.
+
