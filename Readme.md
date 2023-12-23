@@ -137,3 +137,11 @@ this dictionary to determine the set of bricks above and below it and record thi
 a, a brick will cause other bricks to fall if, for each brick above it, there is only one brick below. For part b, 
 for each brick use depth-first search to determine the number of bricks above it that will fall.
 
+
+## Day 23
+For part a, use breadth-first search. For part b, the number of possible parts becomes very large, but we can speed up 
+the search with some optimizations. First, where there is a series of edges of degree 2, replace with a single edge. 
+This reduces the number of nodes and edges dramatically. Secondly, when checking the paths, maintain a dictionary that 
+maps the pair consisting of the sorted tuple of path edges, and the last path, to the maximum distance of the path. This 
+allows us to find the optimal order given a set of path edges and an end point.
+
