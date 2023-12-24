@@ -59,18 +59,18 @@ while len(paths) > 0:
     new_paths = []
     new_distances = []
     for p in paths:
-        r, c = p[-1]
-        curr_dist = max_distance_by_path[tuple(sorted(p)), (r, c)]
-        for r1, c1 in new_edges[r, c]:
-            if (r1, c1) == end:
-                max_dist = max(max_dist, curr_dist + new_edges[r, c][r1, c1])
-            elif (r1, c1) not in p:
-                new_path = p + ((r1, c1), )
+        curr = p[-1]
+        curr_dist = max_distance_by_path[tuple(sorted(p)), curr]
+        for new in new_edges[curr]:
+            if new == end:
+                max_dist = max(max_dist, curr_dist + new_edges[curr][new])
+            elif new not in p:
+                new_path = p + (new, )
                 new_tuple = tuple(sorted(new_path))
-                new_dist = curr_dist + new_edges[r, c][r1, c1]
-                max_dist_this_path = max_distance_by_path.get((new_tuple, (r1, c1)), 0)
+                new_dist = curr_dist + new_edges[curr][new]
+                max_dist_this_path = max_distance_by_path.get((new_tuple, new), 0)
                 if max_dist_this_path < new_dist:
-                    max_distance_by_path[new_tuple, (r1, c1)] = new_dist
+                    max_distance_by_path[new_tuple, new] = new_dist
                     new_paths.append(new_path)
     paths = new_paths
     count += 1
