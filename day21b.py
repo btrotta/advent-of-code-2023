@@ -131,7 +131,6 @@ squares_southeast = fully_enclosed_dist * squares_one_row
 _, squares_one_row = count_reachable((n_rows - 1, 0), fully_enclosed_dist * n_rows - 1, lambda v, h: h < 0 and v == 1)
 squares_southwest = fully_enclosed_dist * squares_one_row
 
-
 # Reachable points on north-west edge
 _, squares_one_row = count_reachable((0, 0), fully_enclosed_dist * n_rows - 1, lambda v, h: h < 0 and v == -1)
 squares_northwest = fully_enclosed_dist * squares_one_row
