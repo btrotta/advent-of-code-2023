@@ -137,6 +137,14 @@ this dictionary to determine the set of bricks above and below it and record thi
 a, a brick will cause other bricks to fall if, for each brick above it, there is only one brick below. For part b, 
 for each brick use depth-first search to determine the number of bricks above it that will fall.
 
+## Day 22
+For part a, use breadth-first search. For part b, note that a point is reachable in exactly the target number of steps 
+if it is reachable in fewer steps, and the shortest distance to reach it has the same parity as the target. Also, note 
+that (in the non-test data), the central row and column are empty, as are the first and last rows and columns. Therefore, 
+to travel from the centre square to a point in any other square, there is a minimal-length path that travels only along 
+the central vertical or horizontal columns, or only along borders, apart from the first and last square. Thus we can 
+find a diamond-shaped area of squares for which all points within them are reachable in the target number of steps. Then, 
+find the distance to travel from the boundary of this area to any other point.
 
 ## Day 23
 For part a, use breadth-first search. For part b, the number of possible parts becomes very large, but we can speed up 
