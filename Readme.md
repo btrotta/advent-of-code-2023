@@ -153,3 +153,16 @@ This reduces the number of nodes and edges dramatically. Secondly, when checking
 maps the pair consisting of the sorted tuple of path edges, and the last path, to the maximum distance of the path. This 
 allows us to find the optimal order given a set of path edges and an end point.
 
+## Day 24
+For part a, the path crossing point (if any) is the solution to a pair of simultaneous equations. For part b, I used 
+the solution outlined here: https://www.reddit.com/r/adventofcode/comments/18pum3b/comment/ker6qsa/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+The unknowns are the rock's initial position and its velocity, which are described by 6 numbers. Given any hailstone, 
+for each x, y, z dimension, we can get an equation relating its initial coordinates and velocity in that dimension,
+the unknown coordinates and velocity in the same dimension, and the intersection time. We get 3 such equations, for the 
+3 dimensions, and t is the same in each case. So we can combine these to get 3 equations, containing the x and y, or the 
+x and z, or the y and z, coordinates. The equations are not linear in the unknown variables. But if we do the same process for a different 
+point, and subtract the corresponding equations, the nonlinear terms cancel. With the original point, plus 2 additional ones, 
+we can get 6 simultaneous linear equations and solve for the 6 unknowns. Because the coordinates of the matrices are 
+too large to be represented by 64-bit floating point numbers, we cannot use the numpy solver. Instead, we can calculate 
+the solution by using Cramer's rule and using the Laplace expansion to calculate the determinants.
+
