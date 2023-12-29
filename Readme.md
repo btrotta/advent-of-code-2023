@@ -166,3 +166,9 @@ we can get 6 simultaneous linear equations and solve for the 6 unknowns. Because
 too large to be represented by 64-bit floating point numbers, we cannot use the numpy solver. Instead, we can calculate 
 the solution by using Cramer's rule and using the Laplace expansion to calculate the determinants.
 
+## Day 25
+To find the edges to cut, check each edge `(x, y)` as follows. Find the shortest path `p` from `x` to `y` excluding the `(x, y)` 
+edge. (There must be such a path, because we know we can cut any 2 edges without disconnecting the graph.) Now, for 
+each edge `(r, s)` on `p`, find the shortest path `q` from `x` to `y`, excluding both  `(x, y)`  and `(r, s)` edges. (Again, 
+such a path must exist.) Finally, check each edge `(u, v)` on `q` in the same way. If no path exists from `x` to `y` 
+that excludes the edges `(x, y), (r, s)` and `(u, v)`, then these are the edges we must cut.
